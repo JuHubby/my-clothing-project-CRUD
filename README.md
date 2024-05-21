@@ -3,7 +3,7 @@
 
 
 ## Description of the project:
-I developed an API using Swagger, incorporating GET, POST, DELETE, and PUT/PATCH requests. For the backend, I utilized packages such as swagger-jsdoc, swagger-ui-express, and express from Node.js. Additionally, I employed nodemon, a handy tool that automatically saves updates in the code and reloads, saving me valuable time.
+I developed an API using Swagger, incorporating GET, POST, DELETE, and PUT/PATCH requests for a clothing store database, which I got from <https://fakestoreapi.com/>. For the backend, I utilized packages such as swagger-jsdoc, swagger-ui-express, and express from Node.js. Additionally, I employed nodemon, a handy tool that automatically saves updates in the code and reloads, saving me valuable time.
 
 One challenge I encountered was writing the Swagger documentation for the parameters section of a PUT operation. Through the Swagger documentation (OpenAPI Guide <https://swagger.io/docs/specification/describing-parameters/>), I learned how to describe parameters by specifying their name, location (in), data type (defined by either schema or content), and other attributes like description or required. Overcoming this hurdle was rewarding as it honed my problem-solving skills through independent research.
 
