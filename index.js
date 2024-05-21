@@ -1,4 +1,3 @@
-const fetch = require("node-fetch")
 const express = require('express')
 const swaggerUi = require('swagger-ui-express')
 const swaggerDocument = require('./swagger.json');
@@ -67,6 +66,10 @@ app.post("/attire",(req,res)=>{
     res.send(`${JSON.stringify(attires)} created`)
 })
 app.delete("/attires/:id", (req,res)=>{
+    if(!attires[req.params.id]) {
+        throw new Error("Attire ID doesnt exist " + req.body.params)
+      }
+      
     console.log('delete:id:'+req.params.id)
     attires = attires.filter(item=> item.id != req.params.id)
     res.send("attires left:"+JSON.stringify(attires));
@@ -78,9 +81,9 @@ app.put("/attiresUpdate/:id", (req,res)=>{
       }
 
       attires[req.params.id] = ({id: req.body.id, title:req.body.title, price: req.body.price}),
-      console.log(JSON.stringify(attires[req.body.id]))
+      console.log(JSON.stringify(attires[req.params.id]))
       res.send("attires updated:"+JSON.stringify(attires));
-      return attires[req.body.id];
+      
 })
 
 app.listen(4000,()=>console.log('Listening on 4000'))
