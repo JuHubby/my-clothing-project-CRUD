@@ -1,0 +1,152 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0", 
+        "title": "My Clothing Project CRUD",
+        "description": "My User Project Application API",
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        }
+    },
+    "host": "localhost:4000",
+    "basePath": "/",
+    "tags": [
+        {
+            "name": "attires",
+            "description": "API for users in the system"
+        }
+    ],
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+
+    "paths": {
+        "/attires": {
+            "get": {
+                "tags": ["attires"],
+                "summary": "Get all attires in system",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Attires"
+                        }
+                    }
+                }
+            }
+        },
+        "/attire": {
+            "post": {
+                "tags": ["attires"],
+                "description": "Create new attire in system",
+                "parameters": [
+                    {
+                        "name": "attires",
+                        "in": "body",
+                        "description": "Attire that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/Attires"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "New attire is created",
+                        "schema": {
+                            "$ref": "#/definitions/Attires"
+                        }
+                    }
+                }
+            }
+        },
+        "/attires/{attireId}": {
+            "delete": {
+                "tags": ["attires"],
+                "description": "Delete attire in system",
+                "parameters": [
+                    {
+                        "name": "attireId",
+                        "in": "path",
+                        "description": "Attire that we want to delete",
+                        "schema": {
+                            "$ref": "#/definitions/Attires"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Attire is deleted",
+                        "schema": {
+                            "$ref": "#/definitions/Attires"
+                        }
+                    }
+                }
+            }
+        },
+        "/attiresUpdate/{attireId}": {
+            "put": {
+                "tags": ["attires"],
+                "description": "Update attire in system",
+                "parameters": [
+                    {
+                        "name": "attireId",
+                        "in": "path",
+                        "description": "Attire that we want to update",
+                        "schema": {
+                            "$ref": "#/definitions/Attires"
+                        }
+                    },
+                    {
+                        "name": "title",
+                        "in": "body",
+                        "description": "Attire that we want to update",
+                        "schema": {
+                            "$ref": "#/definitions/Attires"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Attire is deleted",
+                        "schema": {
+                            "$ref": "#/definitions/Attires"
+                        }
+                    }
+                }
+            }
+        }
+        },
+    "definitions": {
+        "Attires": {
+            "required": ["id","title"],
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "uniqueItems": true
+                },
+                "title": {
+                    "type": "string"
+                },
+                "price": {
+                    "type": "integer"
+                }
+            }
+        }
+    }
+}
