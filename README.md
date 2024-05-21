@@ -10,9 +10,9 @@ One challenge I encountered was writing the Swagger documentation for the parame
 I found Swagger to be a valuable tool for organizing documentation in future coding projects. Its capability to keep code organized and well-documented will undoubtedly enhance collaboration and ease the onboarding process for new team members.
 
 ## How to Run:
-Clone this code to your local directory and then execute the following command in your command line interface (CLI) :
+Clone this code to your local directory and then execute the following command in your command line interface (CLI):
 
-### npm i swagger-jsdoc swagger-ui-express express nodemon
+#### npm i swagger-jsdoc swagger-ui-express express nodemon
 
 Then, you can execute this code at the link <localhost:5500/graphql> after running npm install and node index.js. Make sure you are using Node version 16 or higher.
 
